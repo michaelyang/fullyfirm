@@ -1,13 +1,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import Navbar from '../components/Navbar'
-import './all.sass'
+import Header from './Header'
+import './styles.css'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="FullyFirm" />
-    <Navbar />
+    <Helmet title="Fully Firm" />
+    <Header />
     <div>{children}</div>
   </div>
 )
