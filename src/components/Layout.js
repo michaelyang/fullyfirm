@@ -1,15 +1,25 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from "react";
+import Helmet from "react-helmet";
+import styled from "styled-components";
+import Header from "./Header";
+import Footer from "./Footer";
+import "./styles.css";
 
-import Header from './Header'
-import './styles.css'
+const LayoutWrapper = styled.div`
+  padding: 0 5rem 5rem 5rem;
+`;
+const ContentWrapper = styled.div`
+  padding: 0 5rem 0 5rem;
+  min-height: fill-available;
+`;
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <LayoutWrapper>
     <Helmet title="Fully Firm" />
     <Header />
-    <div>{children}</div>
-  </div>
-)
+    <ContentWrapper>{children}</ContentWrapper>
+    <Footer />
+  </LayoutWrapper>
+);
 
-export default TemplateWrapper
+export default TemplateWrapper;

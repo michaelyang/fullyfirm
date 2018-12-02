@@ -1,12 +1,19 @@
 :root {
-    --ff-pink: #E1487A;
-    --ff-blue: #45C7C1;
-    --ff-beige: #FAF3DD;
-    --ff-yellow: #E9B533;
-    --ff-grey: #5E6472;
+  --ff-pink: #e1487a;
+  --ff-blue: #45c7c1;
+  --ff-beige: #faf3dd;
+  --ff-yellow: #e9b533;
+  --ff-grey: #5e6472;
 }
 
 html {
-   font-size: 10px;
-   font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif;
+  background-color: var(--ff-pink);
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
 }
