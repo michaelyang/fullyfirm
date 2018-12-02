@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import logo from "../img/logo.svg";
+import logo from "../img/logo.png";
 import styled from "styled-components";
 
 const HeaderWrapper = styled.header`

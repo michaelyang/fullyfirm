@@ -9,7 +9,7 @@ const LayoutWrapper = styled.div`
   padding: 0 5rem 5rem 5rem;
 `;
 const ContentWrapper = styled.div`
-  padding: 0 5rem 0 5rem;
+  padding: 0 5% 0 5%;
   min-height: fill-available;
 `;
 
