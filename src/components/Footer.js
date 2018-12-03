@@ -8,10 +8,10 @@ const FooterWrapper = styled.footer`
 
 const Footer = () => (
   <FooterWrapper>
-    <p>Posted by: Hege Refsnes</p>
+    <p>Posted by: Dangey Mikey</p>
     <p>
       Contact information:{" "}
-      <a href="mailto:someone@example.com">someone@example.com</a>.
+      <a href="mailto:dangeymikey@example.com">dangeymikey@example.com</a>.
     </p>
   </FooterWrapper>
 );
