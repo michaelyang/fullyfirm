@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "gatsby";
-import logo from "../img/logo.png";
-import styled from "styled-components";
+import React from 'react';
+import { Link } from 'gatsby';
+import logo from '../img/logo.png';
+import styled from 'styled-components';
 
 const HeaderWrapper = styled.header`
   display: flex;
@@ -68,8 +68,8 @@ const Header = () => (
     </Logo>
     <nav role="navigation">
       <NavItems>
-        <StyledLink to="/about">
-          <NavItem>ABOUT</NavItem>
+        <StyledLink to="/">
+          <NavItem>HOME</NavItem>
         </StyledLink>
         <StyledLink to="/recipes">
           <NavItem>RECIPES</NavItem>
@@ -82,6 +82,9 @@ const Header = () => (
         </StyledLink>
         <StyledLink to="/store">
           <NavItem>STORE</NavItem>
+        </StyledLink>
+        <StyledLink to="/about">
+          <NavItem>ABOUT</NavItem>
         </StyledLink>
       </NavItems>
     </nav>
