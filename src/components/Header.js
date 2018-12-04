@@ -9,7 +9,7 @@ const HeaderWrapper = styled.header`
 `;
 const Logo = styled(Link)`
   margin: auto;
-  padding: 1rem 0 0 0;
+  padding: 1.5rem 0 1.5rem 0;
   img {
     width: 300px;
   }
@@ -35,28 +35,33 @@ const StyledLink = styled(Link)`
     li:focus,
     li:hover,
     li:active {
-      color: var(--ff-pink);
+      background-color: var(--ff-pink);
+      color: #fff;
+      font-style: bold;
     }
   }
   &:nth-child(3n + 2) {
     li:focus,
     li:hover,
     li:active {
-      color: var(--ff-blue);
+      background-color: var(--ff-blue);
+      color: #fff;
+      font-style: bold;
     }
   }
   &:nth-child(3n + 3) {
     li:focus,
     li:hover,
     li:active {
-      color: var(--ff-yellow);
+      background-color: var(--ff-yellow);
+      color: #fff;
+      font-style: bold;
     }
   }
 `;
 const NavItem = styled.li`
-  padding: 1rem 3rem;
-  font-size: 1.4rem;
-  font-weight: bold;
+  padding: 1rem 4rem;
+  font-size: 1.8rem;
   display: flex;
   color: #333;
 `;
