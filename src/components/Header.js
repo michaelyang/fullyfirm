@@ -35,27 +35,21 @@ const StyledLink = styled(Link)`
     li:focus,
     li:hover,
     li:active {
-      background-color: var(--ff-pink);
-      color: #fff;
-      font-style: bold;
+      color: var(--ff-pink);
     }
   }
   &:nth-child(3n + 2) {
     li:focus,
     li:hover,
     li:active {
-      background-color: var(--ff-blue);
-      color: #fff;
-      font-style: bold;
+      color: var(--ff-blue);
     }
   }
   &:nth-child(3n + 3) {
     li:focus,
     li:hover,
     li:active {
-      background-color: var(--ff-yellow);
-      color: #fff;
-      font-style: bold;
+      color: var(--ff-yellow);
     }
   }
 `;
