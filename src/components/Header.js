@@ -57,7 +57,7 @@ const NavItem = styled.li`
   padding: 1rem 4rem;
   font-size: 1.8rem;
   display: flex;
-  color: #333;
+  color: var(--ff-black);
 `;
 
 const Header = () => (
