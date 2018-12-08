@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import logo from '../img/logo.png';
+import logoNotext from '../img/logo-notext.svg';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.header`
@@ -8,12 +9,40 @@ const HeaderWrapper = styled.header`
   flex-direction: column;
 `;
 
-const Nav = styled.nav`
-  position: sticky;
+const MainNav = styled.nav`
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    li {
+      padding: 1rem 4rem;
+      font-size: 1.8rem;
+      display: flex;
+      color: var(--ff-black);
+    }
+  }
+`;
+
+const FixedNav = styled(MainNav)`
+  position: fixed;
   top: 0;
-  background-color: ${props =>
-    props.collapsed === 'true' ? 'var(--ff-pink)' : 'transparent'};
-  transition: background-color 0.4s ease-in-out;
+  width: 100%;
+  display: flex;
+  background-color: var(--ff-black);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  visibility: ${props => (props.active === 'true' ? '' : 'hidden')};
+  transform: ${props => (props.active === 'true' ? '' : 'translateY(-100%)')};
+  transition: transform 0.3s, visibility 0.3s;
+  ul {
+    li {
+      font-weight: bold;
+      color: var(--ff-grey);
+    }
+  }
 `;
 
 const Logo = styled(Link)`
@@ -23,14 +52,15 @@ const Logo = styled(Link)`
     width: 300px;
   }
 `;
-const NavItems = styled.ul`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
+
+const FixedNavLogo = styled(Link)`
+  flex: 1;
+  padding: 0.5rem 0 0.5rem 2.5rem;
+  img {
+    width: 50px;
+  }
 `;
+
 const StyledLink = styled(Link)`
   text-decoration: none;
   &:focus,
@@ -62,57 +92,82 @@ const StyledLink = styled(Link)`
     }
   }
 `;
-const NavItem = styled.li`
-  padding: 1rem 4rem;
-  font-size: 1.8rem;
-  display: flex;
-  color: var(--ff-black);
-`;
 
 export default class Header extends React.Component {
-  state = { collapsed: 'false' };
+  state = { scroll: 0 };
   componentDidMount() {
+    const el = document.querySelector('header');
+    this.setState({
+      top: el.offsetTop + el.offsetHeight,
+      scroll: window.scrollY
+    });
     window.addEventListener('scroll', this.handleScroll);
   }
-
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   }
-
   handleScroll = () => {
     this.setState({
-      collapsed: window.scrollY > 0 ? 'true' : 'false'
+      scroll: window.scrollY
     });
   };
 
   render() {
     return (
       <HeaderWrapper>
-        <Logo collapsed={this.state.collapsed} to="/">
-          <img src={logo} alt="Fully Firm" />
+        <Logo to="/">
+          <img src={logo} alt="FullyFirm" />
         </Logo>
-        <Nav role="navigation" collapsed={this.state.collapsed}>
-          <NavItems>
+        <MainNav role="navigation">
+          <ul>
             <StyledLink to="/">
-              <NavItem>HOME</NavItem>
+              <li>HOME</li>
             </StyledLink>
             <StyledLink to="/recipes">
-              <NavItem>RECIPES</NavItem>
+              <li>RECIPES</li>
             </StyledLink>
             <StyledLink to="/thelab">
-              <NavItem>THE LAB</NavItem>
+              <li>THE LAB</li>
             </StyledLink>
             <StyledLink to="/places">
-              <NavItem>PLACES</NavItem>
+              <li>PLACES</li>
             </StyledLink>
             <StyledLink to="/store">
-              <NavItem>STORE</NavItem>
+              <li>STORE</li>
             </StyledLink>
             <StyledLink to="/about">
-              <NavItem>ABOUT</NavItem>
+              <li>ABOUT</li>
             </StyledLink>
-          </NavItems>
-        </Nav>
+          </ul>
+        </MainNav>
+        <FixedNav
+          active={this.state.scroll > this.state.top ? 'true' : 'false'}
+        >
+          <FixedNavLogo to="/">
+            <img src={logoNotext} alt="FullyFirm" />
+          </FixedNavLogo>
+          <ul>
+            <StyledLink to="/">
+              <li>HOME</li>
+            </StyledLink>
+            <StyledLink to="/recipes">
+              <li>RECIPES</li>
+            </StyledLink>
+            <StyledLink to="/thelab">
+              <li>THE LAB</li>
+            </StyledLink>
+            <StyledLink to="/places">
+              <li>PLACES</li>
+            </StyledLink>
+            <StyledLink to="/store">
+              <li>STORE</li>
+            </StyledLink>
+            <StyledLink to="/about">
+              <li>ABOUT</li>
+            </StyledLink>
+          </ul>
+          <FixedNavLogo to="/" />
+        </FixedNav>
       </HeaderWrapper>
     );
   }
