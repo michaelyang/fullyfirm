@@ -85,7 +85,7 @@ export const pageQuery = graphql`
   query RecipesQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "recipe" } } }
+      filter: { frontmatter: { templateKey: { eq: "recipe-post" } } }
     ) {
       edges {
         node {

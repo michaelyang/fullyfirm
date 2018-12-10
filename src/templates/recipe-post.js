@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
+import Recipe from '../components/Recipe';
 
 export const RecipeTemplate = ({
   content,
@@ -12,6 +13,7 @@ export const RecipeTemplate = ({
   description,
   tags,
   title,
+  ingredients,
   helmet
 }) => {
   const PostContent = contentComponent || Content;
@@ -26,6 +28,7 @@ export const RecipeTemplate = ({
               {title}
             </h1>
             <p>{description}</p>
+            <Recipe data={ingredients} />
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -51,10 +54,11 @@ RecipeTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object
+  helmet: PropTypes.object,
+  ingredients: PropTypes.array
 };
 
-const Recipe = ({ data }) => {
+const RecipePost = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
@@ -74,20 +78,21 @@ const Recipe = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        ingredients={post.frontmatter.ingredients}
       />
     </Layout>
   );
 };
 
-Recipe.propTypes = {
+RecipePost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object
   })
 };
 
-export default Recipe;
+export default RecipePost;
 
-export const pageQuery = graphql`
+export const recipePostQuery = graphql`
   query RecipeByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
@@ -97,6 +102,11 @@ export const pageQuery = graphql`
         title
         description
         tags
+        ingredients {
+          name
+          amount
+          description
+        }
       }
     }
   }
