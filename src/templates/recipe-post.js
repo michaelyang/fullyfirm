@@ -1,11 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
-import Recipe from '../components/Recipe';
+import Ingredients from '../components/Ingredients';
+import Directions from '../components/Directions';
+
+const RecipeTitle = styled.h1`
+  font-size: 2rem;
+`;
+const ArticleWrapper = styled.article`
+  width: 80%;
+  margin: auto;
+`;
+const RecipeWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+`;
+const IngredientsWrapper = styled.div`
+  flex: 1;
+  position: sticky;
+  top: 5rem;
+  align-self: flex-start;
+  height: auto;
+`;
+const DirectionsWrapper = styled.div`
+  flex: 3;
+`;
 
 export const RecipeTemplate = ({
   content,
@@ -13,39 +37,43 @@ export const RecipeTemplate = ({
   description,
   tags,
   title,
+  helmet,
   ingredients,
-  helmet
+  directions
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <ArticleWrapper>
       {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <Recipe data={ingredients} />
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
+      <section>
+        <header>
+          <RecipeTitle>{title}</RecipeTitle>
+        </header>
+        <p>{description}</p>
+      </section>
+      <RecipeWrapper>
+        <IngredientsWrapper>
+          <Ingredients ingredients={ingredients} />
+        </IngredientsWrapper>
+        <DirectionsWrapper>
+          <Directions directions={directions} />
+        </DirectionsWrapper>
+      </RecipeWrapper>
+      <PostContent content={content} />
+      {tags && tags.length ? (
+        <div style={{ marginTop: `4rem` }}>
+          <h4>Tags</h4>
+          <ul className="taglist">
+            {tags.map(tag => (
+              <li key={tag + `tag`}>
+                <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
-    </section>
+      ) : null}
+    </ArticleWrapper>
   );
 };
 
@@ -53,9 +81,11 @@ RecipeTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  tags: PropTypes.array,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  ingredients: PropTypes.array
+  ingredients: PropTypes.array,
+  directions: PropTypes.array
 };
 
 const RecipePost = ({ data }) => {
@@ -79,6 +109,7 @@ const RecipePost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         ingredients={post.frontmatter.ingredients}
+        directions={post.frontmatter.directions}
       />
     </Layout>
   );
@@ -103,10 +134,10 @@ export const recipePostQuery = graphql`
         description
         tags
         ingredients {
-          name
-          amount
+          item
           description
         }
+        directions
       }
     }
   }
