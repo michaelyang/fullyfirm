@@ -1,19 +1,19 @@
 {
-    "name": "FullyFirm",
-    "short_name": "FullyFirm",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#e1487a",
-    "background_color": "#e1487a",
-    "display": "standalone"
+  "name": "FullyFirm",
+  "short_name": "FullyFirm",
+  "icons": [
+    {
+      "src": "/img/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#e1487a",
+  "background_color": "#e1487a",
+  "display": "standalone"
 }

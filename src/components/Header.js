@@ -142,8 +142,7 @@ export default class Header extends React.Component {
           </ul>
         </MainNav>
         <FixedNav
-          active={this.state.scroll > this.state.top ? 'true' : 'false'}
-        >
+          active={this.state.scroll > this.state.top ? 'true' : 'false'}>
           <FixedNavLogo to="/">
             <img src={logoNotext} alt="FullyFirm" />
           </FixedNavLogo>
