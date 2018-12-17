@@ -9,9 +9,12 @@ import favicon16 from '../img/icons/favicon-16x16.png';
 import appleTouchIcon from '../img/icons/apple-touch-icon.png';
 import maskIcon from '../img/icons/safari-pinned-tab.svg';
 
-const LayoutWrapper = styled.div``;
+const LayoutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 const ContentWrapper = styled.div`
-  padding: 0 5% 0 5%;
+  padding: 0 0 0 5%;
   min-height: fill-available;
 `;
 

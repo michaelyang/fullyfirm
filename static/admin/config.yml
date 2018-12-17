@@ -38,6 +38,7 @@ collections:
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Cover Image', name: 'cover_image', widget: 'image' }
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
@@ -48,7 +49,6 @@ collections:
           fields:
             [
               { label: Name, name: name, widget: string },
-              { label: Amount, name: amount, widget: string },
               { label: Description, name: description, widget: string },
             ],
         }

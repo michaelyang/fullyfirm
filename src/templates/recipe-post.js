@@ -6,12 +6,10 @@ import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
-import Ingredients from '../components/Ingredients';
-import Directions from '../components/Directions';
+import RecipeHeader from '../components/Recipe/RecipeHeader';
+import Ingredients from '../components/Recipe/Ingredients';
+import Directions from '../components/Recipe/Directions';
 
-const RecipeTitle = styled.h1`
-  font-size: 2rem;
-`;
 const ArticleWrapper = styled.article`
   width: 80%;
   margin: auto;
@@ -19,6 +17,7 @@ const ArticleWrapper = styled.article`
 const RecipeWrapper = styled.section`
   display: flex;
   justify-content: center;
+  border-top: solid 0.5rem black;
 `;
 const IngredientsWrapper = styled.div`
   flex: 1;
@@ -26,32 +25,32 @@ const IngredientsWrapper = styled.div`
   top: 5rem;
   align-self: flex-start;
   height: auto;
+  padding-right: 2rem;
 `;
 const DirectionsWrapper = styled.div`
-  flex: 3;
+  flex: 2.5;
 `;
 
 export const RecipeTemplate = ({
   content,
   contentComponent,
+  helmet,
   description,
   tags,
   title,
-  helmet,
+  coverImage,
   ingredients,
   directions
 }) => {
   const PostContent = contentComponent || Content;
-
   return (
     <ArticleWrapper>
       {helmet || ''}
-      <section>
-        <header>
-          <RecipeTitle>{title}</RecipeTitle>
-        </header>
-        <p>{description}</p>
-      </section>
+      <RecipeHeader
+        title={title}
+        coverImage={coverImage}
+        description={description}
+      />
       <RecipeWrapper>
         <IngredientsWrapper>
           <Ingredients ingredients={ingredients} />
@@ -83,6 +82,7 @@ RecipeTemplate.propTypes = {
   description: PropTypes.string,
   tags: PropTypes.array,
   title: PropTypes.string,
+  coverImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   helmet: PropTypes.object,
   ingredients: PropTypes.array,
   directions: PropTypes.array
@@ -96,7 +96,6 @@ const RecipePost = ({ data }) => {
       <RecipeTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
         helmet={
           <Helmet titleTemplate="%s | Recipe">
             <title>{`${post.frontmatter.title}`}</title>
@@ -106,8 +105,10 @@ const RecipePost = ({ data }) => {
             />
           </Helmet>
         }
+        description={post.frontmatter.description}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        coverImage={post.frontmatter.cover_image}
         ingredients={post.frontmatter.ingredients}
         directions={post.frontmatter.directions}
       />
@@ -133,6 +134,13 @@ export const recipePostQuery = graphql`
         title
         description
         tags
+        cover_image {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         ingredients {
           item
           description

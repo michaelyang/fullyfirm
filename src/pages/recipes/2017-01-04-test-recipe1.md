@@ -1,22 +1,20 @@
 ---
 templateKey: 'recipe-post'
-title: 'Test RECIPE 1'
+title: 'Okonomiyaki (Japanese Cabbage Pancake)'
 date: 2018-01-04T15:04:10.000Z
-image: /img/jumbotron.jpg
-heading: TEST HEADING
+heading: Okonomiyaki (Japanese Cabbage Pancake)
+cover_image: /img/okonomiyaki.jpg
 description: >-
-  Lolthisisadescription
+  Okonomi means "how you want it," and an okonomiyaki is one of the world's most infinitely adaptable dishes. The shredded or chopped cabbage in the base is a given, but beyond that, you can add whatever you'd like to the batter. Once you've got a few Japanese staples in your pantry (all of which have a shelf life of forever), making it at home is cheap, quick, easy, and filling. Best of all, it's great for using up leftovers.
 tags:
-  - korean
+  - Japanese
 ingredients:
   - item: 1/2 small head cabbage
     description: Finely shredded (about 4 packed cups; 14 ounces; 400g)
-  - item: scallions
+  - item: 3 scallions
     description: Thinly sliced, dark green parts reserved separately
-  - item: katsuobushi
-    amount: '1/2 ounce (15g)'
-  - item: yamaimo
-    amount: '1/4 pound (120g)'
+  - item: 1/2 ounce katsuobushi
+  - item: 1/4 pound (120g) yamaimo
     description: Peeled and grated on the smallest holes of a box grater
   - item: 2 large eggs
   - item: 1/2 cup cold water or dashi

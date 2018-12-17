@@ -14,14 +14,13 @@ const MainNav = styled.nav`
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     justify-content: center;
     align-items: center;
     list-style: none;
     li {
       padding: 1rem 4rem;
-      font-size: 1.8rem;
-      display: flex;
+      font-size: 2rem;
       color: var(--ff-black);
     }
   }
@@ -30,15 +29,17 @@ const MainNav = styled.nav`
 const FixedNav = styled(MainNav)`
   position: fixed;
   top: 0;
+  z-index: 1;
   width: 100%;
   display: flex;
-  background-color: var(--ff-black);
+  background-color: rgba(24, 24, 24, 0.95);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   visibility: ${props => (props.active === 'true' ? '' : 'hidden')};
   transform: ${props => (props.active === 'true' ? '' : 'translateY(-100%)')};
   transition: transform 0.3s, visibility 0.3s;
   ul {
     li {
+      white-space: nowrap;
       font-weight: bold;
       color: var(--ff-grey);
     }
