@@ -1,29 +1,38 @@
 ---
-templateKey: 'recipe'
-title: 'Test RECIPE 1'
+templateKey: 'recipe-post'
+title: 'Okonomiyaki (Japanese Cabbage Pancake)'
 date: 2018-01-04T15:04:10.000Z
+heading: Okonomiyaki (Japanese Cabbage Pancake)
+cover_image: /img/okonomiyaki.jpg
 description: >-
-  Lol
+  Okonomi means "how you want it," and an okonomiyaki is one of the world's most infinitely adaptable dishes. The shredded or chopped cabbage in the base is a given, but beyond that, you can add whatever you'd like to the batter. Once you've got a few Japanese staples in your pantry (all of which have a shelf life of forever), making it at home is cheap, quick, easy, and filling. Best of all, it's great for using up leftovers.
 tags:
-  - korean
+  - Japanese
+ingredients:
+  - item: 1/2 small head cabbage
+    description: Finely shredded (about 4 packed cups; 14 ounces; 400g)
+  - item: 3 scallions
+    description: Thinly sliced, dark green parts reserved separately
+  - item: 1/2 ounce katsuobushi
+  - item: 1/4 pound (120g) yamaimo
+    description: Peeled and grated on the smallest holes of a box grater
+  - item: 2 large eggs
+  - item: 1/2 cup cold water or dashi
+  - item: 3/4 cup all purpose flour
+  - item: 8 to 10 thin slices uncured pork belly
+  - item: 2 Tbsp (30ml) vegetable oil
+  - item: Ao-nori, okonomiyaki sauce, and Kewpie mayonnaise, for serving
+directions:
+  - Combine cabbage, scallion whites and half of greens, half of beni-shoga, 3/4 of katsuobushi, yamaimo, eggs, and water (or dashi) in a large bowl. Sprinkle with flour. Stir with a fork and beat heavily until a thick batter with plenty of bubbles forms. Set aside.
+  - If using pork belly, cover the bottom of a 10-inch nonstick skillet with pork belly and set over medium heat. Add okonomiyaki mixture and spread into an even layer with a fork. If not using pork belly, heat vegetable oil in skillet over medium heat until shimmering. Add okonomiyaki mixture and spread into an even layer with a fork.
+  - Cover and cook, shaking pan occasionally, until bottom layer is crisp and well browned, about 10 minutes, lowering heat as necessary if cabbage threatens to burn.
+  - To flip, drain off any excess fat, then, working over a sink and holding the lid tightly against pan with a pot holder, flip entire pan and lid over so that okonomiyaki transfers to pan lid. Remove pan, then carefully slide okonomiyaki off lid and back into pan, browned side up.
+  - Return to heat, cover, and continue to cook, shaking gently, until both sides are browned and okonomiyaki is not runny but still custardy and tender in the center, about 8 minutes longer. Transfer to a serving platter, pork side up.
+  - Drizzle with okonomiyaki sauce and mayonnaise; sprinkle with ao-nori, remaining beni-shoga, remaining katsuobushi, and remaining scallion greens; and serve immediately off of a communal plate.
+  - Combine cabbage, scallion whites and half of greens, half of beni-shoga, 3/4 of katsuobushi, yamaimo, eggs, and water (or dashi) in a large bowl. Sprinkle with flour. Stir with a fork and beat heavily until a thick batter with plenty of bubbles forms. Set aside.
+  - If using pork belly, cover the bottom of a 10-inch nonstick skillet with pork belly and set over medium heat. Add okonomiyaki mixture and spread into an even layer with a fork. If not using pork belly, heat vegetable oil in skillet over medium heat until shimmering. Add okonomiyaki mixture and spread into an even layer with a fork.
+  - Cover and cook, shaking pan occasionally, until bottom layer is crisp and well browned, about 10 minutes, lowering heat as necessary if cabbage threatens to burn.
+  - To flip, drain off any excess fat, then, working over a sink and holding the lid tightly against pan with a pot holder, flip entire pan and lid over so that okonomiyaki transfers to pan lid. Remove pan, then carefully slide okonomiyaki off lid and back into pan, browned side up.
+  - Return to heat, cover, and continue to cook, shaking gently, until both sides are browned and okonomiyaki is not runny but still custardy and tender in the center, about 8 minutes longer. Transfer to a serving platter, pork side up.
+  - Drizzle with okonomiyaki sauce and mayonnaise; sprinkle with ao-nori, remaining beni-shoga, remaining katsuobushi, and remaining scallion greens; and serve immediately off of a communal plate.
 ---
-
-We expect the shipment of a limited quantity of green beans next Monday. We’ll be offering the roasted beans from Tuesday, but quantities are limited, so be quick.
-
-Blue Mountain Peak is the highest mountain in Jamaica and one of the highest peaks in the Caribbean at 7,402 ft. It is the home of Blue Mountain coffee and their famous tours. It is located on the border of the Portland and Saint Thomas parishes of Jamaica.
-
-## A little history
-
-The Blue Mountains are considered by many to be a hiker's and camper's paradise. The traditional Blue Mountain trek is a 7-mile hike to the peak and consists of a 3,000-foot increase in elevation. Jamaicans prefer to reach the peak at sunrise, thus the 3–4 hour hike is usually undertaken in darkness. Since the sky is usually very clear in the mornings, Cuba can be seen in the distance.
-
-> Some of the plants found on the Blue Mountain cannot be found anywhere else in the world and they are often of a dwarfed sort.
-
-This is mainly due to the cold climate which inhibits growth. The small coffee farming communities of Claverty Cottage and Hagley Gap are located near the peak.
-
-## What you need to know before trying
-
-Jamaican Blue Mountain Coffee or Jamaica Blue Mountain Coffee is a classification of coffee grown in the Blue Mountains of Jamaica. The best lots of Blue Mountain coffee are noted for their mild flavor and lack of bitterness. Over the past few decades, this coffee has developed a reputation that has made it one of the most expensive and sought-after coffees in the world. Over 80% of all Jamaican Blue Mountain Coffee is exported to Japan. In addition to its use for brewed coffee, the beans are the flavor base of Tia Maria coffee liqueur.
-
-Jamaican Blue Mountain Coffee is a globally protected certification mark, meaning only coffee certified by the Coffee Industry Board of Jamaica can be labeled as such. It comes from a recognized growing region in the Blue Mountain region of Jamaica, and its cultivation is monitored by the Coffee Industry Board of Jamaica.
-
-The Blue Mountains are generally located between Kingston to the south and Port Antonio to the north. Rising 7,402 ft, they are some of the highest mountains in the Caribbean. The climate of the region is cool and misty with high rainfall. The soil is rich, with excellent drainage. This combination of climate and soil is considered ideal for coffee.

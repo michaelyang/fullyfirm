@@ -57,7 +57,9 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { in: ["blog-post", "recipe"] } } }
+      filter: {
+        frontmatter: { templateKey: { in: ["blog-post", "recipe-post"] } }
+      }
     ) {
       edges {
         node {
