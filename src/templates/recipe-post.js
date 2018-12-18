@@ -17,7 +17,7 @@ const ArticleWrapper = styled.article`
 const RecipeWrapper = styled.section`
   display: flex;
   justify-content: center;
-  border-top: solid 0.5rem black;
+  border-top: solid 0.25rem black;
 `;
 const IngredientsWrapper = styled.div`
   flex: 1;

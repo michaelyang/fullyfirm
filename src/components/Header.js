@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import logo from '../img/logo.png';
-import logoNotext from '../img/logo-notext.svg';
+import logo from '../img/logos/logo.png';
+import logoNotext from '../img/logos/logo-notext.svg';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.header`
@@ -19,6 +19,7 @@ const MainNav = styled.nav`
     align-items: center;
     list-style: none;
     li {
+      white-space: nowrap;
       padding: 1rem 4rem;
       font-size: 2rem;
       color: var(--ff-black);
@@ -39,8 +40,6 @@ const FixedNav = styled(MainNav)`
   transition: transform 0.3s, visibility 0.3s;
   ul {
     li {
-      white-space: nowrap;
-      font-weight: bold;
       color: var(--ff-grey);
     }
   }

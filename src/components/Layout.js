@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 import './styles.css';
-import favicon32 from '../img/icons/favicon-32x32.png';
-import favicon16 from '../img/icons/favicon-16x16.png';
-import appleTouchIcon from '../img/icons/apple-touch-icon.png';
-import maskIcon from '../img/icons/safari-pinned-tab.svg';
+import favicon32 from '../img/logos/favicon-32x32.png';
+import favicon16 from '../img/logos/favicon-16x16.png';
+import appleTouchIcon from '../img/logos/apple-touch-icon.png';
+import maskIcon from '../img/logos/safari-pinned-tab.svg';
 
 const LayoutWrapper = styled.div`
   display: flex;
