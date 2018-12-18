@@ -6,6 +6,8 @@ import RecipeStats from './RecipeStats';
 
 const RecipeTitle = styled.h1`
   font-size: 3.6rem;
+  padding-bottom: 2.5rem;
+  border-bottom: solid 0.5rem black;
 `;
 const ImageWrapper = styled.div`
   display: flex;
