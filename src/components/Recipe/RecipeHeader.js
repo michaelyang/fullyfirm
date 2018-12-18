@@ -12,6 +12,10 @@ const RecipeTitle = styled.h1`
 const ImageWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  max-height: 500px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 const Description = styled.p`
   font-size: 1.6rem;
@@ -26,7 +30,7 @@ const RecipeHeader = ({ title, coverImage, description }) => (
         imageInfo={{
           alt: title,
           image: coverImage,
-          style: { maxHeight: '400px', flex: 3 }
+          style: { flex: 4 }
         }}
       />
       <RecipeStats />
