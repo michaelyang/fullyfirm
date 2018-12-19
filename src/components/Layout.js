@@ -14,7 +14,7 @@ const LayoutWrapper = styled.div`
   flex-direction: column;
 `;
 const ContentWrapper = styled.div`
-  padding: 0 0 0 5%;
+  padding: 0 10% 0 10%;
   min-height: fill-available;
 `;
 
