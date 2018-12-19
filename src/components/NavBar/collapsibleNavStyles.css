@@ -1,12 +1,10 @@
-.container {
-  background-color: #222222;
-  margin: 0 auto;
+.collapsibleNavContainer {
+  position: fixed;
+  top: 0;
   width: 100%;
-  max-width: 320px;
-  min-height: 568px;
+  height: 100%;
   margin: 0 auto;
   border-radius: 8px;
-  position: relative;
   overflow: hidden;
   -webkit-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.3);
@@ -26,6 +24,7 @@
   cursor: pointer;
   z-index: 333;
 }
+
 .menu-trigger:hover .menu-trigger-bar:before,
 .close-trigger:hover .menu-trigger-bar:before {
   width: 100%;
@@ -44,7 +43,7 @@
   display: block;
   width: 100%;
   height: 4px;
-  background-color: white;
+  background-color: var(--ff-grey);
   margin-bottom: 6px;
   transform: rotate(-45deg);
   position: relative;
@@ -164,14 +163,17 @@
   top: 29%;
   left: -53%;
   transform: rotate(-45deg) scaleY(0);
+  background-color: #45c7c1;
 }
 .menu-bg.top {
   left: -34%;
   top: 0;
   transform: rotate(-45deg) translateY(-152%);
+  background-color: #e1487a;
 }
 .menu-bg.bottom {
   top: 105%;
   transform: rotate(-45deg) translateY(25%);
   left: -20%;
+  background-color: #e9b533;
 }

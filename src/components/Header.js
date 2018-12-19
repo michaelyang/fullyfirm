@@ -18,9 +18,9 @@ const Logo = styled(Link)`
     width: 300px;
   }
 `;
-
 export default class Header extends React.Component {
-  state = { scroll: 0 };
+  state = { scroll: 0, menuVisible: false };
+
   componentDidMount() {
     const el = document.querySelector('header');
     this.setState({

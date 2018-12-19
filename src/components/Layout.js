@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 import './styles.css';
+import favicon from '../img/logos/favicon.ico';
 import favicon32 from '../img/logos/favicon-32x32.png';
 import favicon16 from '../img/logos/favicon-16x16.png';
 import appleTouchIcon from '../img/logos/apple-touch-icon.png';
@@ -27,6 +28,7 @@ const TemplateWrapper = ({ children }) => (
         { name: 'theme-color', content: '#e1487a' }
       ]}
       link={[
+        { rel: 'shortcut icon', href: `${favicon}` },
         {
           rel: 'apple-touch-icon',
           sizes: '180x180',
