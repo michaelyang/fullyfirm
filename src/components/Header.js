@@ -4,11 +4,14 @@ import logo from '../img/logos/logo.png';
 import styled from 'styled-components';
 import MainNav from './NavBar/MainNav';
 import FixedNav from './NavBar/FixedNav';
-import CollapsibleNav from './NavBar/CollapsibleNav';
+import MobileNav from './NavBar/MobileNav';
 
 const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: column;
+  @media (max-width: 768px) {
+    margin-top: 6rem;
+  }
 `;
 
 const Logo = styled(Link)`
@@ -17,7 +20,11 @@ const Logo = styled(Link)`
   img {
     width: 300px;
   }
+  @media (max-width: 768px) {
+    display: None;
+  }
 `;
+
 export default class Header extends React.Component {
   state = { scroll: 0, menuVisible: false };
 
@@ -41,6 +48,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <HeaderWrapper>
+        <MobileNav />
         <Logo to="/">
           <img src={logo} alt="FullyFirm" />
         </Logo>
@@ -48,7 +56,6 @@ export default class Header extends React.Component {
         <FixedNav
           active={this.state.scroll > this.state.top ? 'true' : 'false'}
         />
-        <CollapsibleNav />
       </HeaderWrapper>
     );
   }

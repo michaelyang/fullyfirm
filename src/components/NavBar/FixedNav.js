@@ -14,6 +14,9 @@ const Nav = styled.nav`
   visibility: ${props => (props.active === 'true' ? '' : 'hidden')};
   transform: ${props => (props.active === 'true' ? '' : 'translateY(-100%)')};
   transition: transform 0.3s, visibility 0.3s;
+  @media (max-width: 768px) {
+    display: None;
+  }
   ul {
     margin: 0;
     padding: 0;

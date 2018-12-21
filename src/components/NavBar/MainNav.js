@@ -3,6 +3,9 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
+  @media (max-width: 768px) {
+    display: None;
+  }
   ul {
     margin: 0;
     padding: 0;
