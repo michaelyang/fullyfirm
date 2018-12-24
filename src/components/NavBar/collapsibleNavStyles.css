@@ -202,9 +202,3 @@
   left: -20%;
   background-color: #e9b533;
 }
-
-.modal {
-  display: block;
-  opacity: 0;
-  visibility: hidden;
-}

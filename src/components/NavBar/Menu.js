@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import './collapsibleNavStyles.css';
-import { TimelineLite, CSSPlugin } from 'gsap/all';
+import { TimelineLite, Power4 } from 'gsap/all';
 
 const MenuWrapper = styled.div`
-  opacity: 0;
-  visibility: hidden;
   width: 100vw;
   height: 100vh;
   z-index: 1;
@@ -14,20 +12,49 @@ const MenuWrapper = styled.div`
 class Menu extends Component {
   constructor(props) {
     super(props);
-    this.modalWrap = null;
-    this.modalDialog = null;
-    this.modalTween = new TimelineLite({ paused: true });
+    this.menu = null;
+    this.menuBg1 = null;
+    this.menuBg2 = null;
+    this.menuBg3 = null;
+    this.menuTween = new TimelineLite({ paused: true });
     this.keyDownHandler = this.keyDownHandler.bind(this);
   }
 
   keyDownHandler = e => {
-    if (e.keyCode == 27) this.props.close();
+    if (e.keyCode === 27) this.props.close();
   };
 
   componentDidMount() {
-    this.modalTween
-      .to(this.modalWrap, 0.01, { autoAlpha: 1 })
-      .to(this.modalDialog, 0.25, { y: 50, autoAlpha: 1 }, 0)
+    this.menuTween
+      .from(this.menu, 0, { autoAlpha: 0 })
+      .from(
+        this.menuBg1,
+        0.8,
+        {
+          y: -100,
+          ease: Power4.easeInOut
+        },
+        0
+      )
+      .from(
+        this.menuBg2,
+        0.8,
+        {
+          scaleY: 0,
+          ease: Power4.easeInOut,
+          transformOrigin: 'center'
+        },
+        0
+      )
+      .from(
+        this.menuBg3,
+        0.8,
+        {
+          y: 100,
+          ease: Power4.easeInOut
+        },
+        0
+      )
       .reversed(true)
       .paused(false);
   }
@@ -38,42 +65,53 @@ class Menu extends Component {
     } else {
       window.removeEventListener('keydown', this.keyDownHandler);
     }
-    this.modalTween.reversed(!this.props.visible);
+    this.menuTween.reversed(!this.props.visible);
   }
 
   render() {
     return (
       <MenuWrapper
-        ref={div => (this.modalWrap = div)}
-        onClick={this.props.close}>
+        ref={div => (this.menu = div)}
+        onClick={this.props.close}
+        visible={this.props.visible}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
           version="1.1"
           width="100%"
           height="100%"
           viewBox="0 0 100 100"
-          preserveAspectRatio="none">
-          <polygon points="0,0 100,0 100,20 0,40" fill="#e1487a" />
-          <polygon points="0,40 100,20 100,60 0,80" fill="#45c7c1" />
-          <polygon points="0,80 100,60 100,100 0,100" fill="#e9b533" />
+          preserveAspectRatio="none"
+        >
+          <rect
+            id="menu-bg-2"
+            ref={polygon => (this.menuBg2 = polygon)}
+            x="-100"
+            y="-20"
+            width="200"
+            height="200"
+            transform="rotate(-45)"
+            fill="#45c7c1"
+          />
+          <polygon
+            id="menu-bg-1"
+            ref={polygon => (this.menuBg1 = polygon)}
+            points="0,0 100,0 100,15 0,45"
+            fill="#e1487a"
+          />
+          <polygon
+            id="menu-bg-3"
+            ref={polygon => (this.menuBg3 = polygon)}
+            points="0,85 100,55 100,100 0,100"
+            fill="#e9b533"
+          />
         </svg>
         <div
           className="modal-dialog"
           ref={div => (this.modalDialog = div)}
-          onClick={event => event.stopPropagation()}>
-          <div className="modal-content">
-            <div className="modal-header">
-              <h4>A Simple Modal Tween</h4>
-            </div>
-            <div className="modal-body">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam
-                velit provident sunt iusto ratione dolore veritatis deserunt
-                ullam vel doloribus.
-              </p>
-            </div>
-          </div>
-        </div>
+          onClick={event => event.stopPropagation()}
+        />
       </MenuWrapper>
     );
   }
