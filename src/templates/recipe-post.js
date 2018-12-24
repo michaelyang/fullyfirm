@@ -11,7 +11,7 @@ import Ingredients from '../components/Recipe/Ingredients';
 import Directions from '../components/Recipe/Directions';
 
 const ArticleWrapper = styled.article`
-  width: 80%;
+  width: 100%;
   margin: auto;
 `;
 const RecipeWrapper = styled.section`

@@ -1,18 +1,17 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
   display: flex;
   flex-direction: column;
+  padding: 0 5%;
+  min-height: 15rem;
+  background-color: var(--ff-black);
 `;
 
 const Footer = () => (
   <FooterWrapper>
-    <p>Posted by: Dangey Mikey</p>
-    <p>
-      Contact information:{" "}
-      <a href="mailto:dangeymikey@example.com">dangeymikey@example.com</a>.
-    </p>
+    <p>Michael Yang</p>
   </FooterWrapper>
 );
 

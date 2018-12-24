@@ -1,47 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import logo from '../img/logos/logo.png';
-import logoNotext from '../img/logos/logo-notext.svg';
 import styled from 'styled-components';
+import MainNav from './NavBar/MainNav';
+import FixedNav from './NavBar/FixedNav';
+import MobileNav from './NavBar/MobileNav';
 
 const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: column;
-`;
-
-const MainNav = styled.nav`
-  ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: no-wrap;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    li {
-      white-space: nowrap;
-      padding: 1rem 4rem;
-      font-size: 2rem;
-      color: var(--ff-black);
-    }
-  }
-`;
-
-const FixedNav = styled(MainNav)`
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  display: flex;
-  background-color: rgba(24, 24, 24, 0.95);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  visibility: ${props => (props.active === 'true' ? '' : 'hidden')};
-  transform: ${props => (props.active === 'true' ? '' : 'translateY(-100%)')};
-  transition: transform 0.3s, visibility 0.3s;
-  ul {
-    li {
-      color: var(--ff-grey);
-    }
+  @media (max-width: 768px) {
+    margin-top: 6rem;
   }
 `;
 
@@ -51,50 +20,14 @@ const Logo = styled(Link)`
   img {
     width: 300px;
   }
-`;
-
-const FixedNavLogo = styled(Link)`
-  flex: 1;
-  padding: 0.5rem 0 0.5rem 2.5rem;
-  img {
-    width: 50px;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-  }
-  &:nth-child(3n + 1) {
-    li:focus,
-    li:hover,
-    li:active {
-      color: var(--ff-pink);
-    }
-  }
-  &:nth-child(3n + 2) {
-    li:focus,
-    li:hover,
-    li:active {
-      color: var(--ff-blue);
-    }
-  }
-  &:nth-child(3n + 3) {
-    li:focus,
-    li:hover,
-    li:active {
-      color: var(--ff-yellow);
-    }
+  @media (max-width: 768px) {
+    display: None;
   }
 `;
 
 export default class Header extends React.Component {
-  state = { scroll: 0 };
+  state = { scroll: 0, menuVisible: false };
+
   componentDidMount() {
     const el = document.querySelector('header');
     this.setState({
@@ -115,59 +48,14 @@ export default class Header extends React.Component {
   render() {
     return (
       <HeaderWrapper>
+        <MobileNav />
         <Logo to="/">
           <img src={logo} alt="FullyFirm" />
         </Logo>
-        <MainNav role="navigation">
-          <ul>
-            <StyledLink to="/">
-              <li>HOME</li>
-            </StyledLink>
-            <StyledLink to="/recipes">
-              <li>RECIPES</li>
-            </StyledLink>
-            <StyledLink to="/thelab">
-              <li>THE LAB</li>
-            </StyledLink>
-            <StyledLink to="/places">
-              <li>PLACES</li>
-            </StyledLink>
-            <StyledLink to="/store">
-              <li>STORE</li>
-            </StyledLink>
-            <StyledLink to="/about">
-              <li>ABOUT</li>
-            </StyledLink>
-          </ul>
-        </MainNav>
+        <MainNav />
         <FixedNav
           active={this.state.scroll > this.state.top ? 'true' : 'false'}
-        >
-          <FixedNavLogo to="/">
-            <img src={logoNotext} alt="FullyFirm" />
-          </FixedNavLogo>
-          <ul>
-            <StyledLink to="/">
-              <li>HOME</li>
-            </StyledLink>
-            <StyledLink to="/recipes">
-              <li>RECIPES</li>
-            </StyledLink>
-            <StyledLink to="/thelab">
-              <li>THE LAB</li>
-            </StyledLink>
-            <StyledLink to="/places">
-              <li>PLACES</li>
-            </StyledLink>
-            <StyledLink to="/store">
-              <li>STORE</li>
-            </StyledLink>
-            <StyledLink to="/about">
-              <li>ABOUT</li>
-            </StyledLink>
-          </ul>
-          <FixedNavLogo to="/" />
-        </FixedNav>
+        />
       </HeaderWrapper>
     );
   }
