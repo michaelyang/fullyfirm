@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import './collapsibleNavStyles.css';
-import { TimelineLite, Power4 } from 'gsap/all';
+import { TimelineLite, Power4 } from 'gsap';
 
 const MenuWrapper = styled.div`
   width: 100vw;
