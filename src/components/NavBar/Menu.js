@@ -6,7 +6,6 @@ import { TimelineLite, Power4 } from 'gsap/all';
 const MenuWrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  z-index: 1;
 `;
 
 class Menu extends Component {

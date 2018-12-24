@@ -1,4 +1,5 @@
 .nav-toggle {
+  flex: 1;
   user-select: none;
   cursor: pointer;
   height: 2rem;
