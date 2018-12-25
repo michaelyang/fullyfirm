@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
-import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 import RecipeHeader from '../components/Recipe/RecipeHeader';
 import Ingredients from '../components/Recipe/Ingredients';
@@ -92,27 +91,25 @@ const RecipePost = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
-      <RecipeTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
-        helmet={
-          <Helmet titleTemplate="%s | Recipe">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
-        description={post.frontmatter.description}
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
-        coverImage={post.frontmatter.cover_image}
-        ingredients={post.frontmatter.ingredients}
-        directions={post.frontmatter.directions}
-      />
-    </Layout>
+    <RecipeTemplate
+      content={post.html}
+      contentComponent={HTMLContent}
+      helmet={
+        <Helmet titleTemplate="%s | Recipe">
+          <title>{`${post.frontmatter.title}`}</title>
+          <meta
+            name="description"
+            content={`${post.frontmatter.description}`}
+          />
+        </Helmet>
+      }
+      description={post.frontmatter.description}
+      tags={post.frontmatter.tags}
+      title={post.frontmatter.title}
+      coverImage={post.frontmatter.cover_image}
+      ingredients={post.frontmatter.ingredients}
+      directions={post.frontmatter.directions}
+    />
   );
 };
 
