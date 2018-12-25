@@ -51,7 +51,10 @@ class MobileNav extends React.Component {
         <div className={`nav-toggle ${menuClass}`} onClick={this.toggleMenu}>
           <div className={`nav-toggle-bar ${menuClass}`} />
         </div>
-        <Menu visible={this.state.showMenu ? true : false} />
+        <Menu
+          visible={this.state.showMenu ? true : false}
+          close={this.toggleMenu.bind(null, false)}
+        />
       </ToggleConatiner>
     );
   }

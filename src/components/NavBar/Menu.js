@@ -30,6 +30,11 @@ const MenuList = styled.ul`
     padding: 1.8rem;
     font-size: 3.6rem;
     color: var(--ff-black);
+    &:focus,
+    &:hover,
+    &:active {
+      color: var(--ff-beige);
+    }
   }
 `;
 const StyledLink = styled(Link)`
@@ -40,27 +45,6 @@ const StyledLink = styled(Link)`
   &:link,
   &:active {
     text-decoration: none;
-  }
-  &:nth-child(3n + 1) {
-    li:focus,
-    li:hover,
-    li:active {
-      color: var(--ff-pink);
-    }
-  }
-  &:nth-child(3n + 2) {
-    li:focus,
-    li:hover,
-    li:active {
-      color: var(--ff-blue);
-    }
-  }
-  &:nth-child(3n + 3) {
-    li:focus,
-    li:hover,
-    li:active {
-      color: var(--ff-yellow);
-    }
   }
 `;
 class Menu extends Component {
@@ -174,11 +158,8 @@ class Menu extends Component {
             fill="#e9b533"
           />
         </svg>
-        <MenuList
-          ref={ul => (this.menuList = ul)}
-          onClick={event => event.stopPropagation()}
-        >
-          <StyledLink to="/">
+        <MenuList ref={ul => (this.menuList = ul)}>
+          <StyledLink to="/" onClick={() => this.props.close()}>
             <li>HOME</li>
           </StyledLink>
           <StyledLink to="/recipes">
