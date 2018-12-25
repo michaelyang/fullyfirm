@@ -39,6 +39,7 @@ const MenuList = styled.ul`
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
   &:focus,
   &:hover,
   &:visited,
@@ -93,13 +94,12 @@ class Menu extends Component {
         },
         0
       )
-      .to(this.menuList, 0.1, { delay: 0, autoAlpha: 1 }, '-=0.3')
+      .to(this.menuList, 0.1, { autoAlpha: 1 }, '-=0.3')
       .to(
         this.menuList,
         0.3,
         {
           y: 0,
-          delay: 0,
           ease: Back.easeInOut
         },
         '-=0.4'
