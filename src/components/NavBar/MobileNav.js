@@ -8,11 +8,12 @@ import './collapsibleNavStyles.css';
 const ToggleConatiner = styled.div`
   position: fixed;
   top: 0;
+  z-index: 1;
   height: 6rem;
   width: 100%;
   background-color: var(--ff-black);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: none;
   }
 `;

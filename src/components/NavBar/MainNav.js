@@ -10,13 +10,12 @@ const Nav = styled.nav`
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: no-wrap;
     justify-content: center;
     align-items: center;
     list-style: none;
     li {
       white-space: nowrap;
-      padding: 1rem 4rem;
+      padding: 1rem 3rem;
       font-size: 2rem;
       color: var(--ff-black);
     }
