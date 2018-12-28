@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import Menu from './Menu.js';
 import logoNotext from '../../img/logos/logo-notext.svg';
 import { Link } from 'gatsby';
-import './collapsibleNavStyles.css';
 
-const ToggleConatiner = styled.div`
+const MobileNavWrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 1;
@@ -18,7 +17,7 @@ const ToggleConatiner = styled.div`
   }
 `;
 
-const FixedNavLogo = styled(Link)`
+const MobileNavLogo = styled(Link)`
   position: absolute;
   z-index: -1;
   left: 50%;
@@ -27,6 +26,57 @@ const FixedNavLogo = styled(Link)`
   margin-top: -20px;
   img {
     width: 50px;
+  }
+`;
+
+const ToggleWrapper = styled.div`
+  flex: 1;
+  user-select: none;
+  cursor: pointer;
+  height: 2rem;
+  right: 5%;
+  position: fixed;
+  top: 2rem;
+  width: 3.6rem;
+  z-index: 2;
+`;
+
+const Toggle = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s ease;
+  background: ${props =>
+    props.expanded === true ? 'transparent' : 'var(--ff-blue)'};
+  content: '';
+  height: 0.4rem;
+  width: 100%;
+  margin-top: 0;
+  &:after {
+    position: absolute;
+    top: 50%;
+    transition: all 0.5s ease;
+    content: '';
+    height: 0.4rem;
+    width: 100%;
+    margin-top: ${props => (props.expanded === true ? '0rem' : '1rem')};
+    transform: ${props =>
+      props.expanded === true ? 'rotate(45deg)' : 'translateY(-50%)'};
+    background: ${props =>
+      props.expanded === true ? 'var(--ff-black)' : 'var(--ff-yellow)'};
+  }
+  &:before {
+    position: absolute;
+    top: 50%;
+    transition: all 0.5s ease;
+    content: '';
+    height: 0.4rem;
+    width: 100%;
+    margin-top: ${props => (props.expanded === true ? '0rem' : '-1rem')};
+    transform: ${props =>
+      props.expanded === true ? 'rotate(-45deg)' : 'translateY(-50%)'};
+    background: ${props =>
+      props.expanded === true ? 'var(--ff-black)' : 'var(--ff-pink)'};
   }
 `;
 
@@ -42,20 +92,19 @@ class MobileNav extends React.Component {
   };
 
   render() {
-    const menuClass = this.state.showMenu ? 'expanded' : '';
     return (
-      <ToggleConatiner>
-        <FixedNavLogo to="/">
+      <MobileNavWrapper>
+        <MobileNavLogo to="/">
           <img src={logoNotext} alt="FullyFirm" />
-        </FixedNavLogo>
-        <div className={`nav-toggle ${menuClass}`} onClick={this.toggleMenu}>
-          <div className={`nav-toggle-bar ${menuClass}`} />
-        </div>
+        </MobileNavLogo>
+        <ToggleWrapper onClick={this.toggleMenu}>
+          <Toggle expanded={this.state.showMenu} />
+        </ToggleWrapper>
         <Menu
           visible={this.state.showMenu ? true : false}
           close={this.toggleMenu.bind(null, false)}
         />
-      </ToggleConatiner>
+      </MobileNavWrapper>
     );
   }
 }
