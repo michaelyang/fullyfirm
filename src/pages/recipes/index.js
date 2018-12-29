@@ -8,7 +8,18 @@ export default class RecipesPage extends React.Component {
     const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <section className="section">
+      <section>
+        <h1
+          style={{
+            color: 'var(--ff-pink)',
+            margin: '0',
+            fontSize: '2.4rem',
+            padding: '1rem',
+            textAlign: 'center'
+          }}
+        >
+          Recipes
+        </h1>
         <div className="container">
           <div className="content">
             <h1 className="has-text-weight-bold is-size-2">Latest Recipes</h1>
