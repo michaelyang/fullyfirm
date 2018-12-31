@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 import FeatureGrid from '../components/Homepage/FeatureGrid';
 
 const IndexPageWrapper = styled.div``;

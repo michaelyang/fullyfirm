@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import PreviewCompatibleImage from '../PreviewCompatibleImage';
-import { maxSatisfying } from 'semver';
 
 const FeaturedSectionContainer = styled.div`
   display: grid;
@@ -16,7 +15,6 @@ const FeaturedSectionContainer = styled.div`
     grid-template-areas: 'main main' 'side1 side2';
   }
 `;
-
 const FeaturedPost = styled.div`
   position: relative;
   grid-area: ${props => {

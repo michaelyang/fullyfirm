@@ -1,9 +1,9 @@
 ---
 templateKey: 'recipe-post'
-title: 'Okonomiyaki (Japanese Cabbage Pancake)'
+title: 'Donkatsu (Japanese Pork Cutlet)'
 date: 2018-01-04T15:04:10.000Z
-heading: Okonomiyaki (Japanese Cabbage Pancake)
-cover_image: /img/okonomiyaki.jpg
+heading: Donkatsu (Japanese Pork Cutlet)
+cover_image: /img/donkatsu.jpg
 description: >-
   Okonomi means "how you want it," and an okonomiyaki is one of the world's most infinitely adaptable dishes. The shredded or chopped cabbage in the base is a given, but beyond that, you can add whatever you'd like to the batter. Once you've got a few Japanese staples in your pantry (all of which have a shelf life of forever), making it at home is cheap, quick, easy, and filling. Best of all, it's great for using up leftovers.
 tags:

@@ -1,6 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
+import RecipeCards from '../../components/Recipe/RecipeCards';
+
+const RecipeTitle = styled.h1`
+  font-size: 3.6rem;
+  text-align: center;
+  color: var(--ff-blue);
+`;
+
+const SubHeading = styled.h2`
+  font-size: 2.4rem;
+  border-bottom: solid 0.5rem black;
+  padding-bottom: 1rem;
+`;
 
 export default class RecipesPage extends React.Component {
   render() {
@@ -9,49 +23,10 @@ export default class RecipesPage extends React.Component {
 
     return (
       <section>
-        <h1
-          style={{
-            color: 'var(--ff-pink)',
-            margin: '0',
-            fontSize: '2.4rem',
-            padding: '1rem',
-            textAlign: 'center'
-          }}
-        >
-          Recipes
-        </h1>
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Recipes</h1>
-          </div>
-          {posts.map(({ node: post }) => (
-            <div
-              className="content"
-              style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-              key={post.id}
-            >
-              <p>
-                <Link className="has-text-primary" to={post.fields.slug}>
-                  {post.frontmatter.title}
-                </Link>
-                <span> &bull; </span>
-                <small>{post.frontmatter.date}</small>
-              </p>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button is-small" to={post.fields.slug}>
-                  Keep Reading →
-                </Link>
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Korean</h1>
-          </div>
+        <RecipeTitle>Recipes</RecipeTitle>
+        <div>
+          <SubHeading>Latest Recipes</SubHeading>
+          <RecipeCards posts={posts} />
           {posts.map(({ node: post }) => (
             <div
               className="content"
@@ -106,6 +81,13 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            cover_image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
