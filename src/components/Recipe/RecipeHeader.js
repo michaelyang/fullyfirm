@@ -23,7 +23,7 @@ const Description = styled.p`
 `;
 
 const RecipeHeader = ({ title, coverImage, description }) => (
-  <header>
+  <section>
     <RecipeTitle>{title}</RecipeTitle>
     <ImageWrapper>
       <PreviewCompatibleImage
@@ -36,7 +36,7 @@ const RecipeHeader = ({ title, coverImage, description }) => (
       <RecipeStats />
     </ImageWrapper>
     <Description>{description}</Description>
-  </header>
+  </section>
 );
 
 RecipeHeader.propTypes = {

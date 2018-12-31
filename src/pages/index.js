@@ -1,50 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
+import FeatureGrid from '../components/Homepage/FeatureGrid';
+
+const IndexPageWrapper = styled.div``;
+const FeaturedSectionWrapper = styled.section`
+  h1 {
+    font-size: 3.6rem;
+    border-bottom: solid 0.5rem black;
+    padding-bottom: 2.5rem;
+  }
+`;
 
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { edges: featuredPosts } = data.featured;
 
     return (
-      <section className="section">
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-          </div>
-          {posts.map(({ node: post }) => (
-            <div
-              className="content"
-              style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-              key={post.id}
-            >
-              <p>
-                <Link className="has-text-primary" to={post.fields.slug}>
-                  {post.frontmatter.title}
-                </Link>
-                <span> &bull; </span>
-                <small>{post.frontmatter.date}</small>
-              </p>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button is-small" to={post.fields.slug}>
-                  Keep Reading →
-                </Link>
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <IndexPageWrapper>
+        <FeaturedSectionWrapper>
+          <h1>Latest Stories</h1>
+          <FeatureGrid featuredPosts={featuredPosts} />
+        </FeaturedSectionWrapper>
+      </IndexPageWrapper>
     );
   }
 }
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    featured: PropTypes.shape({
       edges: PropTypes.array
     })
   })
@@ -52,11 +39,10 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(
+    featured: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: {
-        frontmatter: { templateKey: { in: ["blog-post", "recipe-post"] } }
-      }
+      filter: { frontmatter: { templateKey: { in: ["recipe-post"] } } }
+      limit: 3
     ) {
       edges {
         node {
@@ -69,6 +55,13 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            cover_image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
