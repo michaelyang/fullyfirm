@@ -12,11 +12,9 @@ import maskIcon from '../img/logos/safari-pinned-tab.svg';
 
 const LayoutWrapper = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1fr;
   grid-template-areas: 'header header header' 'main main main' 'footer footer footer';
   justify-content: center;
   @media (max-width: 768px) {
-    grid-template-columns: 1fr 1fr;
     grid-template-areas: 'header' 'main' 'footer';
   }
 `;
