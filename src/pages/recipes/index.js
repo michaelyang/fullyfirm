@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 import RecipeCards from '../../components/Recipe/RecipeCards';
 
-const RecipeTitle = styled.h1`
+const Title = styled.h1`
   font-size: 3.6rem;
   text-align: center;
   color: var(--ff-blue);
@@ -23,7 +23,7 @@ export default class RecipesPage extends React.Component {
 
     return (
       <section>
-        <RecipeTitle>Recipes</RecipeTitle>
+        <Title>Recipes</Title>
         <div>
           <SubHeading>Latest Recipes</SubHeading>
           <RecipeCards posts={posts} />
