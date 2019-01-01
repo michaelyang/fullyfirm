@@ -12,7 +12,7 @@ const RecipeTitle = styled.h1`
 const ImageWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  max-height: 500px;
+  max-height: 50rem;
   @media (max-width: 768px) {
     flex-direction: column;
   }
