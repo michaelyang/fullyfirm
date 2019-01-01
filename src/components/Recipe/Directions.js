@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const DirectionsWrapper = styled.div`
-  padding: 0 1rem 0 1rem;
-`;
+const DirectionsWrapper = styled.div``;
 const Title = styled.h2`
   font-size: 2.4rem;
   color: var(--ff-blue);

@@ -4,6 +4,10 @@ import styled from 'styled-components';
 
 const IngredientsWrapper = styled.div`
   padding: 0 1rem 0 1rem 0;
+  width: 100%;
+`;
+const TitleWrapper = styled.div`
+  width: 100%;
 `;
 const Title = styled.h2`
   font-size: 2.4rem;
@@ -14,6 +18,9 @@ const IngredientsListWrapper = styled.ul`
   border: 0.1rem dotted #666;
   li {
     list-style-type: none;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 const Item = styled.span`
@@ -28,10 +35,12 @@ const ItemDescription = styled.p`
 
 const Ingredients = ({ ingredients }) => (
   <IngredientsWrapper>
-    <Title>Ingredients</Title>
+    <TitleWrapper>
+      <Title>Ingredients</Title>
+    </TitleWrapper>
     <IngredientsListWrapper>
       {ingredients.map(ingredient => (
-        <li key={ingredient.item} className="is-size-5">
+        <li key={ingredient.item}>
           <Item>{ingredient.item}</Item>
           <ItemDescription>{ingredient.description}</ItemDescription>
         </li>

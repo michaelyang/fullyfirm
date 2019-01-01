@@ -15,8 +15,13 @@ const ArticleWrapper = styled.article`
 `;
 const RecipeWrapper = styled.section`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   border-top: solid 0.25rem black;
+  padding-top: 0.125rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 const IngredientsWrapper = styled.div`
   flex: 1;
@@ -25,9 +30,18 @@ const IngredientsWrapper = styled.div`
   align-self: flex-start;
   height: auto;
   padding-right: 2rem;
+  @media (max-width: 768px) {
+    width: 100%;
+    background-color: white;
+    padding-right: 0;
+  }
 `;
 const DirectionsWrapper = styled.div`
   flex: 2.5;
+  padding: 0 1rem 0 1rem;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const RecipeTemplate = ({

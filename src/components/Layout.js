@@ -12,7 +12,8 @@ import maskIcon from '../img/logos/safari-pinned-tab.svg';
 
 const LayoutWrapper = styled.div`
   display: grid;
-  grid-template-areas: 'header header header' 'main main main' 'footer footer footer';
+  grid-template-columns: 1fr;
+  grid-template-areas: 'header' 'main' 'footer';
   justify-content: center;
   @media (max-width: 768px) {
     grid-template-areas: 'header' 'main' 'footer';
@@ -22,6 +23,9 @@ const ContentWrapper = styled.div`
   grid-area: main;
   padding: 0 10% 0 10%;
   min-height: fill-available;
+  @media (max-width: 768px) {
+    padding: 0 5% 0 5%;
+  }
 `;
 
 const TemplateWrapper = ({ children }) => (
