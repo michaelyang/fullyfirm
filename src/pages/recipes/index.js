@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 import RecipeCards from '../../components/Recipe/RecipeCards';
 
-const RecipeTitle = styled.h1`
+const Title = styled.h1`
   font-size: 3.6rem;
   text-align: center;
   color: var(--ff-blue);
@@ -23,33 +23,10 @@ export default class RecipesPage extends React.Component {
 
     return (
       <section>
-        <RecipeTitle>Recipes</RecipeTitle>
+        <Title>Recipes</Title>
         <div>
           <SubHeading>Latest Recipes</SubHeading>
           <RecipeCards posts={posts} />
-          {posts.map(({ node: post }) => (
-            <div
-              className="content"
-              style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-              key={post.id}
-            >
-              <p>
-                <Link className="has-text-primary" to={post.fields.slug}>
-                  {post.frontmatter.title}
-                </Link>
-                <span> &bull; </span>
-                <small>{post.frontmatter.date}</small>
-              </p>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button is-small" to={post.fields.slug}>
-                  Keep Reading →
-                </Link>
-              </p>
-            </div>
-          ))}
         </div>
       </section>
     );

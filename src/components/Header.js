@@ -7,6 +7,7 @@ import FixedNav from './NavBar/FixedNav';
 import MobileNav from './NavBar/MobileNav';
 
 const HeaderWrapper = styled.header`
+  grid-area: header;
   display: flex;
   flex-direction: column;
   @media (max-width: 768px) {

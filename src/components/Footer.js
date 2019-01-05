@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
+  grid-area: footer;
   display: flex;
   flex-direction: column;
   padding: 0 5%;
