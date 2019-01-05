@@ -8,6 +8,13 @@ const FooterWrapper = styled.footer`
   padding: 0 5%;
   min-height: 15rem;
   background-color: var(--ff-black);
+  @media (max-width: 768px) {
+    min-height: 5rem;
+  }
+  p {
+    color: var(--ff-beige);
+    text-align: right;
+  }
 `;
 
 const Footer = () => (

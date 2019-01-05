@@ -18,7 +18,6 @@ const RecipeWrapper = styled.section`
   flex-direction: row;
   justify-content: center;
   border-top: solid 0.25rem black;
-  padding-top: 0.125rem;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -31,9 +30,8 @@ const IngredientsWrapper = styled.div`
   height: auto;
   padding-right: 2rem;
   @media (max-width: 768px) {
-    width: 100%;
-    background-color: white;
     padding-right: 0;
+    position: static;
   }
 `;
 const DirectionsWrapper = styled.div`
@@ -64,15 +62,6 @@ export const RecipeTemplate = ({
         coverImage={coverImage}
         description={description}
       />
-      <RecipeWrapper>
-        <IngredientsWrapper>
-          <Ingredients ingredients={ingredients} />
-        </IngredientsWrapper>
-        <DirectionsWrapper>
-          <Directions directions={directions} />
-        </DirectionsWrapper>
-      </RecipeWrapper>
-      <PostContent content={content} />
       {tags && tags.length ? (
         <div style={{ marginTop: `4rem` }}>
           <h4>Tags</h4>
@@ -85,6 +74,15 @@ export const RecipeTemplate = ({
           </ul>
         </div>
       ) : null}
+      <RecipeWrapper>
+        <IngredientsWrapper>
+          <Ingredients ingredients={ingredients} />
+        </IngredientsWrapper>
+        <DirectionsWrapper>
+          <Directions directions={directions} />
+        </DirectionsWrapper>
+      </RecipeWrapper>
+      <PostContent content={content} />
     </ArticleWrapper>
   );
 };

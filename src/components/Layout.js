@@ -21,10 +21,10 @@ const LayoutWrapper = styled.div`
 `;
 const ContentWrapper = styled.div`
   grid-area: main;
-  padding: 0 10% 0 10%;
+  margin: 0 10% 0 10%;
   min-height: fill-available;
   @media (max-width: 768px) {
-    padding: 0 5% 0 5%;
+    margin: 0 2.5% 0 2.5%;
   }
 `;
 
