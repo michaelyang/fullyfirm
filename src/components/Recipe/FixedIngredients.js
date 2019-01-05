@@ -2,19 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const IngredientsWrapper = styled.div`
+const FixedIngredientsWrapper = styled.div`
   padding: 0 1rem 0 1rem 0;
   width: 100%;
+  @media (max-width: 768px) {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    overflow: auto;
+    h2,
+    ul {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
 `;
 const Title = styled.h2`
   font-size: 2.4rem;
   color: var(--ff-pink);
 `;
-const IngredientsListWrapper = styled.ul`
+const FixedIngredientsListWrapper = styled.ul`
   padding: 1rem;
   border: 0.1rem dotted #666;
   li {
     list-style-type: none;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 const Item = styled.span`
@@ -28,20 +43,20 @@ const ItemDescription = styled.p`
 `;
 
 const Ingredients = ({ ingredients }) => (
-  <IngredientsWrapper>
+  <FixedIngredientsWrapper>
     <Title>Ingredients</Title>
-    <IngredientsListWrapper>
+    <FixedIngredientsListWrapper>
       {ingredients.map(ingredient => (
         <li key={ingredient.item}>
           <Item>{ingredient.item}</Item>
           <ItemDescription>{ingredient.description}</ItemDescription>
         </li>
       ))}
-    </IngredientsListWrapper>
-  </IngredientsWrapper>
+    </FixedIngredientsListWrapper>
+  </FixedIngredientsWrapper>
 );
 
-Ingredients.propTypes = {
+FxiedIngredients.propTypes = {
   ingredients: PropTypes.arrayOf(
     PropTypes.shape({
       item: PropTypes.string,
@@ -50,4 +65,4 @@ Ingredients.propTypes = {
   )
 };
 
-export default Ingredients;
+export default FxiedIngredients;

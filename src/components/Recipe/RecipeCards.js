@@ -6,6 +6,9 @@ import RecipeCard from './RecipeCard';
 const CardsWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const RecipeCards = ({ posts }) => (

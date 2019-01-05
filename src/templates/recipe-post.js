@@ -15,8 +15,12 @@ const ArticleWrapper = styled.article`
 `;
 const RecipeWrapper = styled.section`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   border-top: solid 0.25rem black;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 const IngredientsWrapper = styled.div`
   flex: 1;
@@ -25,9 +29,17 @@ const IngredientsWrapper = styled.div`
   align-self: flex-start;
   height: auto;
   padding-right: 2rem;
+  @media (max-width: 768px) {
+    padding-right: 0;
+    position: static;
+  }
 `;
 const DirectionsWrapper = styled.div`
   flex: 2.5;
+  padding: 0 1rem 0 1rem;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const RecipeTemplate = ({
@@ -50,15 +62,6 @@ export const RecipeTemplate = ({
         coverImage={coverImage}
         description={description}
       />
-      <RecipeWrapper>
-        <IngredientsWrapper>
-          <Ingredients ingredients={ingredients} />
-        </IngredientsWrapper>
-        <DirectionsWrapper>
-          <Directions directions={directions} />
-        </DirectionsWrapper>
-      </RecipeWrapper>
-      <PostContent content={content} />
       {tags && tags.length ? (
         <div style={{ marginTop: `4rem` }}>
           <h4>Tags</h4>
@@ -71,6 +74,15 @@ export const RecipeTemplate = ({
           </ul>
         </div>
       ) : null}
+      <RecipeWrapper>
+        <IngredientsWrapper>
+          <Ingredients ingredients={ingredients} />
+        </IngredientsWrapper>
+        <DirectionsWrapper>
+          <Directions directions={directions} />
+        </DirectionsWrapper>
+      </RecipeWrapper>
+      <PostContent content={content} />
     </ArticleWrapper>
   );
 };
