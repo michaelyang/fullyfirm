@@ -85,10 +85,15 @@ class MobileNav extends React.Component {
     super(props);
     this.state = { showMenu: false };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
   }
 
   toggleMenu = () => {
     this.setState({ showMenu: !this.state.showMenu });
+  };
+
+  closeMenu = () => {
+    this.setState({ showMenu: false });
   };
 
   render() {
@@ -102,7 +107,7 @@ class MobileNav extends React.Component {
         </ToggleWrapper>
         <Menu
           visible={this.state.showMenu ? true : false}
-          close={this.toggleMenu.bind(null, false)}
+          close={this.closeMenu}
         />
       </MobileNavWrapper>
     );

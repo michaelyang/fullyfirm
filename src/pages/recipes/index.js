@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 import RecipeCards from '../../components/Recipe/RecipeCards';
-
-const Title = styled.h1`
-  font-size: 3.6rem;
-  text-align: center;
-  color: var(--ff-blue);
-`;
+import PageTitle from '../../components/PageTitle';
 
 const SubHeading = styled.h2`
   font-size: 2.4rem;
@@ -23,7 +18,7 @@ export default class RecipesPage extends React.Component {
 
     return (
       <section>
-        <Title>Recipes</Title>
+        <PageTitle title="Recipes" color="var(--ff-blue)" />
         <div>
           <SubHeading>Latest Recipes</SubHeading>
           <RecipeCards posts={posts} />

@@ -42,7 +42,7 @@ const ItemDescription = styled.p`
   font-size: 1.2rem;
 `;
 
-const Ingredients = ({ ingredients }) => (
+const FixedIngredients = ({ ingredients }) => (
   <FixedIngredientsWrapper>
     <Title>Ingredients</Title>
     <FixedIngredientsListWrapper>
@@ -56,7 +56,7 @@ const Ingredients = ({ ingredients }) => (
   </FixedIngredientsWrapper>
 );
 
-FxiedIngredients.propTypes = {
+FixedIngredients.propTypes = {
   ingredients: PropTypes.arrayOf(
     PropTypes.shape({
       item: PropTypes.string,
@@ -65,4 +65,4 @@ FxiedIngredients.propTypes = {
   )
 };
 
-export default FxiedIngredients;
+export default FixedIngredients;

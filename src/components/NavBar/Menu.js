@@ -158,7 +158,7 @@ class Menu extends Component {
           />
         </svg>
         <MenuList ref={ul => (this.menuList = ul)}>
-          <StyledLink to="/" onClick={() => this.props.close()}>
+          <StyledLink to="/">
             <li>HOME</li>
           </StyledLink>
           <StyledLink to="/recipes">

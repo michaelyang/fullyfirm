@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
+import PageTitle from '../../components/PageTitle';
 
 const Title = styled.h1`
   font-size: 3.6rem;
@@ -18,7 +19,7 @@ const PlacesPage = ({
 }) => (
   <section>
     <Helmet title={`Places | ${title}`} />
-    <Title>Places</Title>
+    <PageTitle title="Places" color="var(--ff-pink)" />
     <div />
   </section>
 );
