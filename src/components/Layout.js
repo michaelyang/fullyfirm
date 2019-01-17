@@ -21,6 +21,7 @@ const LayoutWrapper = styled.div`
 `;
 const ContentWrapper = styled.div`
   grid-area: main;
+  z-index: 1;
   margin: 0 10% 0 10%;
   min-height: fill-available;
   @media (max-width: 768px) {

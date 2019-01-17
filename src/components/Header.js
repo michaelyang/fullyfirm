@@ -8,6 +8,7 @@ import MobileNav from './NavBar/MobileNav';
 
 const HeaderWrapper = styled.header`
   grid-area: header;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   @media (max-width: 768px) {
