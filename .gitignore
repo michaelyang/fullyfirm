@@ -7,3 +7,9 @@ public/
 static/admin/*.bundle.*
 .DS_Store
 yarn-error.log
+
+# lock files
+yarn.lock
+package-lock.json
+# ignore any lock file other than main lock file
+!/yarn.lock
