@@ -59,7 +59,7 @@ class Menu extends Component {
     this.keyDownHandler = this.keyDownHandler.bind(this);
   }
 
-  keyDownHandler = e => {
+  keyDownHandler = (e) => {
     if (e.keyCode === 27) this.props.close();
   };
 
@@ -71,7 +71,7 @@ class Menu extends Component {
         0.8,
         {
           y: 0,
-          ease: Power4.easeInOut
+          ease: Power4.easeInOut,
         },
         0
       )
@@ -80,7 +80,7 @@ class Menu extends Component {
         0.8,
         {
           scaleY: 1,
-          ease: Power4.easeInOut
+          ease: Power4.easeInOut,
         },
         0
       )
@@ -89,7 +89,7 @@ class Menu extends Component {
         0.8,
         {
           y: 0,
-          ease: Power4.easeInOut
+          ease: Power4.easeInOut,
         },
         0
       )
@@ -99,7 +99,7 @@ class Menu extends Component {
         0.3,
         {
           y: 0,
-          ease: Back.easeInOut
+          ease: Back.easeInOut,
         },
         '-=0.4'
       )
@@ -119,7 +119,7 @@ class Menu extends Component {
   render() {
     return (
       <MenuWrapper
-        ref={div => (this.menu = div)}
+        ref={(div) => (this.menu = div)}
         onClick={this.props.close}
         visible={this.props.visible}
       >
@@ -134,7 +134,7 @@ class Menu extends Component {
         >
           <rect
             id="menu-bg-2"
-            ref={polygon => (this.menuBg2 = polygon)}
+            ref={(polygon) => (this.menuBg2 = polygon)}
             x="-100"
             y="100"
             width="200"
@@ -144,26 +144,29 @@ class Menu extends Component {
           />
           <polygon
             id="menu-bg-1"
-            ref={polygon => (this.menuBg1 = polygon)}
+            ref={(polygon) => (this.menuBg1 = polygon)}
             points="0,0 100,0 100,15 0,45"
             transform="translate(0, -100)"
             fill="#e1487a"
           />
           <polygon
             id="menu-bg-3"
-            ref={polygon => (this.menuBg3 = polygon)}
+            ref={(polygon) => (this.menuBg3 = polygon)}
             points="0,85 100,55 100,100 0,100"
             transform="translate(0, 100)"
             fill="#e9b533"
           />
         </svg>
-        <MenuList ref={ul => (this.menuList = ul)}>
+        <MenuList ref={(ul) => (this.menuList = ul)}>
+          {/*
           <StyledLink to="/">
             <li>HOME</li>
           </StyledLink>
+          */}
           <StyledLink to="/recipes">
             <li>RECIPES</li>
           </StyledLink>
+          {/*
           <StyledLink to="/thelab">
             <li>THE LAB</li>
           </StyledLink>
@@ -173,6 +176,7 @@ class Menu extends Component {
           <StyledLink to="/store">
             <li>STORE</li>
           </StyledLink>
+          */}
           <StyledLink to="/about">
             <li>ABOUT</li>
           </StyledLink>

@@ -10,6 +10,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   return (
     <section>
       <PageTitle title="About" color="var(--ff-yellow)" />
+      <p>Just a recipe website for Michael</p>
     </section>
   );
 };
