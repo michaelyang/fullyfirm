@@ -26,7 +26,7 @@ ingredients:
   - item: Okonomiyaki sauce
   - item: Kewpie mayonnaise
 directions:
-  - Place the finely chopped cabbage in a large bowl. Sprinkle flour on top. Add the scallion whites, grated yamaimo, eggs, and dashi. Mix the batter well. The consistency should be slightly watery. This mixture can sit upto two days if air-tight.
+  - Place the finely chopped cabbage in a large bowl. Sprinkle flour on top. Add the scallion whites, grated yamaimo, eggs, and dashi. Mix the batter well. The consistency should be slightly watery. This mixture can sit up to two days if air-tight.
   - Add around 1 to 2 Tbsp of oil to a 8-inch nonstick pan. Cover the bottom with pork belly and set over medium heat. Add the prepared batter and spread it evenly.
   - Cover the pan and let it sit for about 6 minutes. The time varies a lot depending on the fire/pan size/thickness/pork belly slices. You should be able to see the bottom edges browned from above. Adjust accordingly.
   - Uncover, tip out and save the excess oil from the pan. Flip the okonomiyaki, either using a spatula or flipping it in the air. You can also close the lid, flip the pan over, and slide the okonomiyaki off the lid onto the pan again, but you must make sure you have no oil remaining before.

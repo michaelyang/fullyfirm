@@ -2,47 +2,45 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
-import FeatureGrid from '../components/Homepage/FeatureGrid';
+import RecipeCards from '../components/Recipe/RecipeCards';
+import PageTitle from '../components/PageTitle';
 
-const IndexPageWrapper = styled.div``;
-const FeaturedSectionWrapper = styled.section`
-  h1 {
-    font-size: 3.6rem;
-    border-bottom: solid 0.5rem black;
-    padding-bottom: 2.5rem;
-  }
+const SubHeading = styled.h2`
+  font-size: 2.4rem;
+  border-bottom: solid 0.5rem black;
+  padding-bottom: 1rem;
 `;
 
-export default class IndexPage extends React.Component {
+export default class RecipesPage extends React.Component {
   render() {
     const { data } = this.props;
-    const { edges: featuredPosts } = data.featured;
+    const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <IndexPageWrapper>
-        <FeaturedSectionWrapper>
-          <h1>Latest Stories</h1>
-          <FeatureGrid featuredPosts={featuredPosts} />
-        </FeaturedSectionWrapper>
-      </IndexPageWrapper>
+      <section>
+        <PageTitle title="Recipes" color="var(--ff-blue)" />
+        <div>
+          <SubHeading>Latest Recipes</SubHeading>
+          <RecipeCards posts={posts} />
+        </div>
+      </section>
     );
   }
 }
 
-IndexPage.propTypes = {
+RecipesPage.propTypes = {
   data: PropTypes.shape({
-    featured: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array
     })
   })
 };
 
 export const pageQuery = graphql`
-  query IndexQuery {
-    featured: allMarkdownRemark(
+  query PageQuery {
+    allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { in: ["recipe-post"] } } }
-      limit: 3
+      filter: { frontmatter: { templateKey: { eq: "recipe-post" } } }
     ) {
       edges {
         node {
