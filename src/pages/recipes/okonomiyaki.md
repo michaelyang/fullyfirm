@@ -5,7 +5,7 @@ date: 2020-04-13T15:04:10.000Z
 heading: Okonomiyaki (Japanese Cabbage Pancake)
 cover_image: /img/okonomiyaki.jpg
 description: >-
-  Okonomi means "how you want it". This is just how I like my okonomiyaki. You can add whatever you'd like once you get the base down. I use an 8-inch pan to make it personal-sized. Feel free to use larger pans, but cooking time will have to increase.
+  Okonomi means "how you want it." This is just how I like my okonomiyaki. You can add whatever you'd like once you get the base down. I use an 8-inch pan to make it personal-sized. Feel free to use larger pans, but cooking time will have to increase.
 tags:
   - Japanese
 ingredients:
@@ -15,7 +15,7 @@ ingredients:
   - item: 1 cup dashi
   - item: 2 large eggs
     description: Beaten
-  - item: 1/5 pound (90g) yamaimo
+  - item: 1/6 pound (75g) yamaimo
     description: Peeled and grated
   - item: 2 scallions
     description: Thinly sliced, keep white and green parts separate.
