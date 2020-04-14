@@ -6,6 +6,7 @@ import RecipeStats from './RecipeStats';
 
 const RecipeTitle = styled.h1`
   font-size: 3.6rem;
+  margin-top: 1rem;
   padding-bottom: 2.5rem;
   border-bottom: solid 0.5rem black;
 `;

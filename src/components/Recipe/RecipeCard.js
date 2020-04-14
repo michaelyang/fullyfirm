@@ -8,11 +8,22 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 1.5rem;
+  a:link, a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  margin: 0 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border: 2px solid black;
 `;
 
 const CardDescription = styled.div`
   flex: 1;
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding: 10px;
+
 `;
 
 const RecipeCard = ({ post }) => (

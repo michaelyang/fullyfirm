@@ -163,6 +163,9 @@ class Menu extends Component {
             <li>HOME</li>
           </StyledLink>
           */}
+          <StyledLink to="/about">
+            <li>ABOUT</li>
+          </StyledLink>
           <StyledLink to="/recipes">
             <li>RECIPES</li>
           </StyledLink>
@@ -177,9 +180,6 @@ class Menu extends Component {
             <li>STORE</li>
           </StyledLink>
           */}
-          <StyledLink to="/about">
-            <li>ABOUT</li>
-          </StyledLink>
         </MenuList>
       </MenuWrapper>
     );

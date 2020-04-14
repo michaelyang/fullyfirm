@@ -19,13 +19,14 @@ const LayoutWrapper = styled.div`
     grid-template-areas: 'header' 'main' 'footer';
   }
 `;
+
 const ContentWrapper = styled.div`
   grid-area: main;
   z-index: 1;
   margin: 0 10% 0 10%;
-  min-height: fill-available;
+  min-height: 100vh;
   @media (max-width: 768px) {
-    margin: 0 2.5% 0 2.5%;
+    margin: 0 2.5% 2.5% 2.5%;
   }
 `;
 

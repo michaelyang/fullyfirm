@@ -21,10 +21,10 @@ const RecipeStatsWrapper = styled.div`
 `;
 const RecipeStats = ({ yields, cookTime, difficulty, cuisine }) => (
   <RecipeStatsWrapper>
-    <PersonIcon width="30" height="30" fill="" value="6 - 7" />
+    <PersonIcon width="30" height="30" fill="" value="3 - 4" />
     <PrepTimerIcon width="30" height="30" fill="" value="30 mins" />
     <ActiveTimerIcon width="30" height="30" fill="" value="15 mins" />
-    <FireIcon width="30" height="30" fill="" value="5/10" />
+    <FireIcon width="30" height="30" fill="" value="4/10" />
     <EarthIcon width="30" height="30" fill="" value="Japanese" />
   </RecipeStatsWrapper>
   /*

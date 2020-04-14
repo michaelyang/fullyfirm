@@ -57,23 +57,11 @@ const StyledLink = styled(Link)`
 const MainNav = () => (
   <Nav role="navigation">
     <ul>
-      <StyledLink to="/">
-        <li>HOME</li>
+      <StyledLink to="/about">
+        <li>ABOUT</li>
       </StyledLink>
       <StyledLink to="/recipes">
         <li>RECIPES</li>
-      </StyledLink>
-      <StyledLink to="/thelab">
-        <li>THE LAB</li>
-      </StyledLink>
-      <StyledLink to="/places">
-        <li>PLACES</li>
-      </StyledLink>
-      <StyledLink to="/store">
-        <li>STORE</li>
-      </StyledLink>
-      <StyledLink to="/about">
-        <li>ABOUT</li>
       </StyledLink>
     </ul>
   </Nav>

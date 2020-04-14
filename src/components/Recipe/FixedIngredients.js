@@ -6,7 +6,6 @@ const FixedIngredientsWrapper = styled.div`
   padding: 0 1rem 0 1rem 0;
   width: 100%;
   @media (max-width: 768px) {
-    width: 100vw;
     position: relative;
     margin-left: -50vw;
     left: 50%;

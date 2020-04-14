@@ -6,7 +6,7 @@ const FooterWrapper = styled.footer`
   display: flex;
   flex-direction: column;
   padding: 0 5%;
-  min-height: 15rem;
+  min-height: 5rem;
   background-color: var(--ff-black);
   @media (max-width: 768px) {
     min-height: 5rem;

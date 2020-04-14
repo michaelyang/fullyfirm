@@ -4,17 +4,17 @@ import styled from 'styled-components';
 import RecipeCard from './RecipeCard';
 
 const CardsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   @media (max-width: 768px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 `;
 
 const RecipeCards = ({ posts }) => (
   <CardsWrapper>
     {posts.map(({ node: post }) => (
-      <RecipeCard post={post} />
+      <RecipeCard post={post} key={post.id}/>
     ))}
   </CardsWrapper>
 );

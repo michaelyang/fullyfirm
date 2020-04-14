@@ -27,6 +27,7 @@ const IngredientsWrapper = styled.div`
   position: sticky;
   top: 5rem;
   align-self: flex-start;
+  width: 100%;
   height: auto;
   padding-right: 2rem;
   @media (max-width: 768px) {
@@ -62,6 +63,7 @@ export const RecipeTemplate = ({
         coverImage={coverImage}
         description={description}
       />
+      {/*
       {tags && tags.length ? (
         <div style={{ marginTop: `4rem` }}>
           <h4>Tags</h4>
@@ -74,6 +76,7 @@ export const RecipeTemplate = ({
           </ul>
         </div>
       ) : null}
+      */}
       <RecipeWrapper>
         <IngredientsWrapper>
           <Ingredients ingredients={ingredients} />
